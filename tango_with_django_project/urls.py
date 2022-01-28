@@ -26,6 +26,4 @@ urlpatterns = [
     # include will pass the remainder of the URL string ofter rango/
     path('rango/', include('rango.urls')),
     path('admin/', admin.site.urls),
-] 
-#! chapter 6
-#!+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -8,22 +8,36 @@
 </head>
 <body>
 
-    <h1>Rango says..</h1>
+    <h1>Rango says...</h1>
+    <div>
+        hey there partner! <br/>
+        Here is the about page
+        <strong>This tutorial has been put together by Jalal Sayed</strong><br/>
+    </div>
+
+    <div>
+            <a href="/rango/">Index</a>
+            
+            <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" />
+            <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of a Cat" />
+        </div>
+
+    <!-- <h1>Rango says..</h1>
     <div>
         here is the about page.<br/>
         <strong>tutorial has been put together by Jalal Sayed</strong>
     </div>
 
     <div>
-        <a href="/">Index</a>
+        <a href="/">Index</a> -->
 
         <!-- static file example -->
-        <img src="{% static 'images/rango.jpg' %}" alt="My picture"/>
-        
+        <!-- <img src="{% static 'images/rango.jpg' %}" alt="My picture"/> -->
+        <!--  -->
         <!-- media file example -->
-        <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of a Cat"/>
-
-    </div>
+        <!-- <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of a Cat"/> -->
+<!--  -->
+    <!-- </div> -->
     
     
 </body>

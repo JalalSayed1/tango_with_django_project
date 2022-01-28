@@ -5,35 +5,41 @@
 <html lang="en">
 <head>
     <title>Rango</title>
+    <!-- CSS -->
+    <!-- <link rel="stylesheet" href="{% static 'css/base.css' %}"> -->
+    <!-- JS -->
+    <!-- <script src="{% static 'js/jquery.js' %}"></script> -->
 </head>
 <body>
 
-    <h1>Rango says..</h1>
+    <h1>Rango says...</h1>
     <div>
         hey there partner! <br/>
-        <strong>{{ boldmessage }}</strong>
+        <strong>{{ boldmessage }}</strong><br/>
     </div>
 
-    <div>
+    <!-- ! chapter 6 -->
+    <!-- <div> -->
         <!-- if categories has any element in it: -->
         <!-- these brackets for Django commands -->
-        {% if categories %} 
-            <ul>
-                {% for category in categories %}
+        <!-- {% if categories %}  -->
+            <!-- <ul> -->
+                <!-- {% for category in categories %} -->
                 <!-- to display the category name from the list: -->
                 <!-- these bracket for Django variables which will be placed on page-->
-                    <li>{{ category.name }}</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <strong>There are no categories present.</strong>
-        {% endif %}
-        </div>
+                    <!-- <li>{{ category.name }}</li> -->
+                <!-- {% endfor %} -->
+            <!-- </ul> -->
+        <!-- {% else %} -->
+            <!-- <strong>There are no categories present.</strong> -->
+        <!-- {% endif %} -->
+        <!-- </div> -->
 
-        <dir>
-            <a href="/rango/about/">About</a>
+        <div>
+            <a href="/rango/about/">About</a><br />
+            
             <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango"/>
-    </div>
+        </div>
     
 </body>
 </html>
