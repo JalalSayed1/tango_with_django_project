@@ -6,7 +6,6 @@ class Category(models.Model):
     name = models.CharField(max_length=128, unique=True) # CharField to store chars (eg. strings), args are optional
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
-    
     slug = models.SlugField(unique=True) # blank=True to make it unimportant field to be completed in the admin interface
 
     # overriding save func:

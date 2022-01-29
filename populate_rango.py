@@ -48,7 +48,7 @@ def populate():
             'likes' : 16}
             }
 
-    #! if want to add more categories or pages, add them to the dicts above
+    #! if want to add more categories or pages, add them to the dicts above.
 
     # to go through the cats dict then adds each category and then adds all the associated pages for that category
     for cat, cat_data in cats.items():
