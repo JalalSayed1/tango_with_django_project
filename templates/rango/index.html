@@ -18,25 +18,27 @@
         <strong>{{ boldmessage }}</strong><br/>
     </div>
 
-    <!-- ! chapter 6 -->
-    <!-- <div> -->
+    <div>
         <!-- if categories has any element in it: -->
-        <!-- these brackets for Django commands -->
-        <!-- {% if categories %}  -->
-            <!-- <ul> -->
-                <!-- {% for category in categories %} -->
+        <!--  these brackets for Django commands -->
+        {% if categories %} 
+            <ul>
+                {% for category in categories %}
                 <!-- to display the category name from the list: -->
-                <!-- these bracket for Django variables which will be placed on page-->
-                    <!-- <li>{{ category.name }}</li> -->
-                <!-- {% endfor %} -->
-            <!-- </ul> -->
-        <!-- {% else %} -->
-            <!-- <strong>There are no categories present.</strong> -->
-        <!-- {% endif %} -->
-        <!-- </div> -->
+                <!-- these bracket for Django variables which will be placed on page -->
+                    <li>
+                        <!-- category.slug is from Category in models.py -->
+                        <a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+        </div>
 
         <div>
-            <a href="/rango/about/">About</a><br />
+            <a href="/rango/about/">About Rango</a><br />
             
             <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango"/>
         </div>
