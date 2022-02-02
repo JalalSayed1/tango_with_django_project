@@ -19,6 +19,7 @@
     </div>
 
     <div>
+        <h2>Most Liked Categories</h2>
         <!-- if categories has any element in it: -->
         <!--  these brackets for Django commands -->
         {% if categories %} 
@@ -26,15 +27,26 @@
                 {% for category in categories %}
                 <!-- to display the category name from the list: -->
                 <!-- these bracket for Django variables which will be placed on page -->
-                    <li>
-                        <!-- category.slug is from Category in models.py -->
-                        <a href="/rango/category/{{ category.slug }}">{{ category.name }}</a>
-                    </li>
+                <!-- category.slug is from Category in models.py -->
+                    <li><a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}
             <strong>There are no categories present.</strong>
         {% endif %}
+        </div>
+
+        <div>
+            <h2>Most Viewed Pages</h2>
+            {% if pages %}
+                <ul>
+                    {% for page in pages %}
+                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <strong>There are no pages present.</strong>
+            {% endif %}
         </div>
 
         <div>
