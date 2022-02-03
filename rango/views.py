@@ -1,11 +1,11 @@
-from multiprocessing import context
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import HttpResponse
-from rango import views
-from rango.models import Category, Page
-# from tango_with_django_project.rango.forms import CategoryForm
-from rango.forms import CategoryForm, PageForm
+from rango.models import Category
+from rango.models import Page
+from rango.forms import CategoryForm
+from django.shortcuts import redirect
 from django.urls import reverse
+from rango.forms import PageForm
 
 
 def index(request):

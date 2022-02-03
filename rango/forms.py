@@ -4,11 +4,9 @@ from dataclasses import field
 from django import forms
 from rango.models import Page, Category
 
-class CategoryForm (forms.ModelForm):
+class CategoryForm (forms.ModelForm): 
     
-    max_length = 128
-    
-    name = forms.CharField(max_length=max_length, help_text="Please enter the category name.")
+    name = forms.CharField(max_length=Category.NAME_MAX_LENGTH , help_text="Please enter the category name.")
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
     slug = forms.CharField(widget=forms.HiddenInput(), required=False)
@@ -21,12 +19,9 @@ class CategoryForm (forms.ModelForm):
         fields = ('name',)
 
 class PageForm(forms.ModelForm):
-
-    max_length = 128
-    max_length_url = 200
     
-    title = forms.CharField(max_length=max_length, help_text="Please enter the title of the page.")
-    url = forms.URLField(max_length=max_length_url, help_text="Please enter the url of the page.")
+    title = forms.CharField(max_length=Page.TITLE_MAX_LENGTH , help_text="Please enter the title of the page.")
+    url = forms.URLField(max_length=Page.URL_MAX_LENGTH, help_text="Please enter the url of the page.")
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
     class Meta:
@@ -41,7 +36,7 @@ class PageForm(forms.ModelForm):
     def clean(self):
         # a dict:
         cleaned_data = self.cleaned_data
-        url = cleaned_data.get(url)
+        url = cleaned_data.get('url')
 
         # if url is not empty and does not start with http:// then we append it:
         if url and not url.startswith('http://'):
