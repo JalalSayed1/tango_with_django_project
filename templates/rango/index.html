@@ -1,16 +1,12 @@
-<!DOCTYPE html>
 
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
 
-<html lang="en">
-<head>
-    <title>Rango</title>
-    <!-- CSS -->
-    <!-- <link rel="stylesheet" href="{% static 'css/base.css' %}"> -->
-    <!-- JS -->
-    <!-- <script src="{% static 'js/jquery.js' %}"></script> -->
-</head>
-<body>
+{% block title_block %}
+    Homepage
+{% endblock %}
+
+{% block body_block %}
 
     <h1>Rango says...</h1>
     <div>
@@ -28,7 +24,8 @@
                 <!-- to display the category name from the list: -->
                 <!-- these bracket for Django variables which will be placed on page -->
                 <!-- category.slug is from Category in models.py -->
-                    <li><a href="/rango/category/{{ category.slug }}/">{{ category.name }}</a></li>
+                <!-- old url: /rango/category/{{ category.slug }}/ -->
+                    <li><a href=" {% url 'rango:show_category' category.slug %}">{{ category.name }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}
@@ -50,13 +47,7 @@
         </div>
 
         <div>
-
-            <a href="/rango/about/">About Rango</a><br />
-            <a href="/rango/add_category/">Add a New Category</a><br />
-            
             <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango"/>
-
         </div>
     
-</body>
-</html>
+{% endblock %}
