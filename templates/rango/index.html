@@ -12,10 +12,9 @@
     <div>
         <!-- personalised header message if user is logged in -->
         {% if user.is_authenticated %}
-            howdy {{ user.username }}
+            howdy {{ user.username }}!<br/>
         {% else %}
-            hey there partner! 
-            <br/>
+            hey there partner!<br/>
         {% endif %}
 
 

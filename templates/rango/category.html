@@ -27,7 +27,9 @@
             <!-- this add_page/ is a relative url. Means, it will take what url we have and just add add_page/ at the end of it. -->
             <!-- <a href="add_page/">Add Page</a><br /> -->
 
-            <a href="{% url 'rango:add_page' category.slug %}">Add Page</a><br />
+            {% if user.is_authenticated %}
+                <a href="{% url 'rango:add_page' category.slug %}">Add Page</a><br />
+            {% endif %}
 
         {% else %}
             The specified category does not exist.

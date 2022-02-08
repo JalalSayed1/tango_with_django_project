@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [ # how to validate user passwords
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-        'OPTIONS' : {'min_length : 6'} # at least 6 chars long
+        'OPTIONS' : {'min_length' : 6} # at least 6 chars long
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
