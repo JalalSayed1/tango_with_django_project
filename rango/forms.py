@@ -1,7 +1,6 @@
 # this file can be put inside models.py but put it separate make the project tidier
 
 from django import forms
-from tango_with_django_project.rango.models import UserProfile
 from rango.models import Category, Page
 from django.contrib.auth.models import User
 from rango.models import UserProfile

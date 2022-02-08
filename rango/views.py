@@ -139,7 +139,7 @@ def register(request):
             # since we need to set the user attribute for UserProfile ourselves, set commit to False
             # This delays saving the model until we are ready to avoid integrity problems
             profile = profile_form.save(commit=False)
-            profile.user = user
+            profile.user = user # we are only allowed to to this bc commit is False above
             
             # if user provided profile picture, get it from input form and put it in the UserProfile model:
             if 'picture' in request.FILES:
