@@ -4,7 +4,7 @@ from django.urls import reverse
 from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
 from rango.models import Category, Page
 from django.contrib.auth import authenticate, login
-
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -196,7 +196,9 @@ def user_login(request):
         # no context dictionary to pass to the template
         return render(request, 'rango/login.html')
 
-
+@login_required
+def restricted(request):
+     return HttpResponse("Since you're logged in, you can see this text!")
     
 
     
